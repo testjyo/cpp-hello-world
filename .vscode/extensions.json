@@ -2,6 +2,7 @@
     // See https://go.microsoft.com/fwlink/?LinkId=827846
     // for the documentation about the extensions.json format
     "recommendations": [
-        "eclipse-cdt.cdt-vscode"
+        "llvm-vs-code-extensions.vscode-clangd",
+        "eclipse-cdt.cdt-gdb-vscode"
     ]
 }
