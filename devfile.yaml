@@ -27,4 +27,4 @@ commands:
         kind: run
 events:
   postStart:
-    - code --install-extension redhat.vscode.vsix
+    - code --install-extension redhat.vscode-yaml
