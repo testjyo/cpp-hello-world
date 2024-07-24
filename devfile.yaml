@@ -25,3 +25,6 @@ commands:
       commandLine: "./hello.out"
       group:
         kind: run
+events:
+  postStart:
+    - code --install-extension redhat.vscode.vsix
