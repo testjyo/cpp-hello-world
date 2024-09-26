@@ -25,6 +25,3 @@ commands:
       commandLine: "./hello.out"
       group:
         kind: run
-events:
-  postStart:
-    - export VSCODE_AGENT_FOLDER=/checode/remote && cd /checode/checode-linux-libc ./node out/server-main.js --install-extension redhat.vscode-yaml
