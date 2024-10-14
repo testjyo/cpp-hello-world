@@ -3,7 +3,5 @@
     // for the documentation about the extensions.json format
     "recommendations": [
         "llvm-vs-code-extensions.vscode-clangd",
-        "eclipse-cdt.cdt-gdb-vscode",
-        "golang.go",
-    ]
+        "eclipse-cdt.cdt-gdb-vscode",    ]
 }
