@@ -1,6 +1,13 @@
 schemaVersion: 2.2.2
 metadata:
   name: cpp
+attributes:
+  .vscode/extensions.json: |
+    {
+      "recommendations": [
+        "redhat.java"
+      ]
+    }
 components:
   - name: tools
     container:
