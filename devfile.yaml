@@ -5,7 +5,7 @@ attributes:
   .vscode/extensions.json: |
     {
       "recommendations": [
-        "redhat.java"
+        "golang.go"
       ]
     }
 components:
