@@ -5,17 +5,10 @@ attributes:
   pod-overrides:
     spec:
       securityContext:
-        allowPrivilegeEscalation: true
-	      capabilities:
-	        add:
-	        - SETGID
-	        - SETUID
-  .vscode/extensions.json: |
-    {
-      "recommendations": [
-        "golang.go"
-      ]
-    }
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+        supplementalGroups: [4000]
 components:
   - name: tools
     container:
