@@ -6,6 +6,10 @@ attributes:
     spec:
       securityContext:
         allowPrivilegeEscalation: true
+        capabilities:
+            add:
+              - SETGID
+	            - SETUID
 components:
   - name: tools
     container:
