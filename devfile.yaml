@@ -1,15 +1,6 @@
 schemaVersion: 2.2.2
 metadata:
   name: cpp
-attributes:
-  pod-overrides:
-    spec:
-      securityContext:
-        allowPrivilegeEscalation: true
-        capabilities:
-            add:
-              - SETGID
-	            - SETUID
 components:
   - name: tools
     container:
