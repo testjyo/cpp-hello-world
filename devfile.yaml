@@ -12,6 +12,10 @@ components:
       image: quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 1G
       mountSources: true
+      endpoints:
+      - name: 'web'
+        targetPort: 8080
+        exposure: public
 commands:
   - id: build
     exec:
