@@ -3,6 +3,6 @@
     // for the documentation about the extensions.json format
     "recommendations": [
         "llvm-vs-code-extensions.vscode-clangd",
-        "gitlab.gitlab workflow",
+        "gitlab.gitlab-workflow",
         "redhat.ansible",    ]
 }
