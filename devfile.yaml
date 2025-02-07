@@ -9,7 +9,7 @@ attributes:
 components:
   - name: tools
     container:
-      image: quay.io/devfile/universal-developer-image:ubi8-lates
+      image: quay.io/devfile/universal-developer-image:test
       memoryLimit: 1G
       mountSources: true
       endpoints:
