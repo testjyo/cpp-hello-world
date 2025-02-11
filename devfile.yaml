@@ -7,15 +7,18 @@ attributes:
       securityContext:
         allowPrivilegeEscalation: true
 components:
-  - name: tools
-    container:
-      image: quay.io/devfile/universal-developer-image:ubi8-latest
-      memoryLimit: 1G
-      mountSources: true
-      endpoints:
-      - name: 'web'
-        targetPort: 8080
-        exposure: public
+  - name: outerloop-build
+    image:
+      imageName: python-image:latest
+      dockerfile:
+        git:
+          fileLocation: 'uri/Dockerfile'
+          checkoutFrom:
+            revision: 'main'
+            remote: 'origin'
+          remotes:
+            'origin': 'https://github.com/myorg/myrepo'
+        buildContext: .
    
 commands:
   - id: build
