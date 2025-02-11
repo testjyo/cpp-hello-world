@@ -9,7 +9,7 @@ attributes:
 components:
   - name: tools
     container:
-      image: quay.io/che-incubator-pull-requests/che-code:pr-424-amd64
+      image:  quay.io/devfile/universal-developer-image:ubi8-latest
       memoryLimit: 1G
       mountSources: true
       endpoints:
