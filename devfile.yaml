@@ -7,18 +7,15 @@ attributes:
       securityContext:
         allowPrivilegeEscalation: true
 components:
-  - name: outerloop-build
-    image:
-      imageName: python-image:latest
-      dockerfile:
-        git:
-          fileLocation: 'uri/Dockerfile'
-          checkoutFrom:
-            revision: 'main'
-            remote: 'origin'
-          remotes:
-            'origin': 'https://github.com/myorg/myrepo'
-        buildContext: .
+  - name: tools
+    container:
+      image: quay.io/che-incubator-pull-requests/che-code:pr-424-amd64
+      memoryLimit: 1G
+      mountSources: true
+      endpoints:
+      - name: 'web'
+        targetPort: 8080
+        exposure: public
    
 commands:
   - id: build
