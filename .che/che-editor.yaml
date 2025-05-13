@@ -1,0 +1,5 @@
+id: che-incubator/che-code/latest
+override:
+  containers:
+    - name: che-code-injector
+      image: quay.io/che-incubator/che-code:latest
