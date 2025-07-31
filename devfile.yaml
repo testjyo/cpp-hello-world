@@ -1,0 +1,47 @@
+schemaVersion: 2.2.2
+metadata:
+  name: cpp
+attributes:
+  pod-overrides:
+    spec:
+      securityContext:
+        allowPrivilegeEscalation: true
+components:
+  - name: tools
+    container:
+      image:  quay.io/devfile/universal-developer-image:ubi8-latest
+      memoryLimit: 1G
+      mountSources: true
+      endpoints:
+      - name: 'web'
+        targetPort: 8080
+        exposure: public
+   
+commands:
+  - id: build
+    exec:
+      label: "Build application"
+      component: tools
+      workingDir: "${PROJECT_SOURCE}"
+      commandLine: g++ -g hello.cpp -o hello.out && echo "Build complete"
+      group:
+        kind: build
+        isDefault: true
+  - id: run
+    exec:
+      label: "Run application"
+      component: tools
+      workingDir: "${PROJECT_SOURCE}"
+      commandLine: "./hello.out"
+      group:
+        kind: run
+  - id: add-default-extensions
+    exec:
+      # put your tooling container name here
+      component: tools
+      commandLine: |
+        # download regular binary
+        curl https://open-vsx.org/api/redhat/ansible/25.1.0/file/redhat.ansible-25.1.0.vsix --location -o /tmp/redhat.ansible-25.1.0.vsix
+events:
+  postStart:
+    - add-default-extensions
