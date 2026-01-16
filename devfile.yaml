@@ -45,6 +45,3 @@ commands:
         # download regular binary
         curl https://open-vsx.org/api/redhat/ansible/25.1.0/file/redhat.ansible-25.1.0.vsix --location -o /tmp/redhat.ansible-25.1.0.vsix
 
-events:
-  postStart:
-    - failing-command 
