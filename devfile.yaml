@@ -16,9 +16,7 @@ components:
       - name: 'web'
         targetPort: 8080
         exposure: public
-      env:
-        - name: KUBEDOCK_ENABLED
-          value: 'true'   
+   
 commands:
   - id: build
     exec:
@@ -44,4 +42,10 @@ commands:
       commandLine: |
         # download regular binary
         curl https://open-vsx.org/api/redhat/ansible/25.1.0/file/redhat.ansible-25.1.0.vsix --location -o /tmp/redhat.ansible-25.1.0.vsix
-
+  - id: failing-command
+    exec:
+      commandLine: "echo 'I fail' && false"
+      component: tools
+events:
+  postStart:
+    - failing-command 
